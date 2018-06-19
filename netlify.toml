@@ -1,0 +1,25 @@
+[[headers]]
+
+for = "/*"
+
+[headers.values]
+
+Content-Security-Policy = "frame-ancestors feedreader.netlify.com"
+Referrer-Policy = "strict-origin"
+Strict-Transport-Security = "max-age=31536000"
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+proxy_hide_header = "X-Powered-By"
+
+
+[build.environment]
+
+NODE_VERSION = "9"
+YARN_VERSION = "1.7.0"
+
+[[redirects]]
+from = "http://feedreader.netlify.com"
+to = "https://feedreader.netlify.com:443"
+status = 301
+force = true
